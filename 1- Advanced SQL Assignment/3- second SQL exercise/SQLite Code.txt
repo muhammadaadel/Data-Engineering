@@ -1,0 +1,15 @@
+-- ======================================== Find the top 10 emloyees who sold the most quantity in "Beverages" category =========================================================
+SELECT
+"FirstName" AS "Employee_FirstName",
+"LastName" AS "Employee_LastName",
+SUM(COALESCE("OrderDetails"."Quantity", 0)) AS "Sold_Most_Beverages"
+FROM "Employees"
+LEFT JOIN "Orders" ON "Employees"."EmployeeID" = "Orders"."EmployeeID"
+LEFT JOIN "OrderDetails" ON "OrderDetails"."OrderID" = "Orders"."OrderID"
+LEFT JOIN "Products" ON "Products"."ProductID" = "OrderDetails"."ProductID"
+LEFT JOIN "Categories" ON "Categories"."CategoryID" = "Products"."CategoryID"
+WHERE "Categories"."CategoryName" = 'Beverages'
+OR "Orders"."EmployeeID" IS NULL               -- This line is to include Employees who sold nothing if they are in the top ten.
+GROUP BY "Employees"."EmployeeID", "FirstName", "LastName"
+ORDER BY "Sold_Most_Beverages" DESC
+LIMIT 10;

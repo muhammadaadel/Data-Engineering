@@ -1,0 +1,10 @@
+-- =================================================== Find the top 10 employees who sold the most number of orders ===============================================
+SELECT
+"FirstName" AS "Employee_FirstName",
+"LastName" AS "Employee_LastName",
+COUNT("Orders"."OrderID") AS "Number_Of_Orders"
+FROM "Employees"
+LEFT JOIN "Orders" ON "Employees"."EmployeeID" = "Orders"."EmployeeID"
+GROUP BY "Employees"."EmployeeID", "FirstName", "LastName"
+ORDER BY "Number_Of_Orders" DESC
+LIMIT 10;
