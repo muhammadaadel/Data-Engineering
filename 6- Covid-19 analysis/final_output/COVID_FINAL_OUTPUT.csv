@@ -1,0 +1,217 @@
+covid_final_output.top_death,covid_final_output.top_test,covid_final_output.country_name
+35.0,2565.0,Afghanistan
+83.0,17089.0,Albania
+32.0,NULL,Algeria
+686.0,1778642.0,Andorra
+3.0,1962.0,Angola
+NULL,44072.0,Anguilla
+31.0,17727.0,Antigua and Barbuda
+144.0,22783.0,Argentina
+282.0,64291.0,Armenia
+56.0,165395.0,Aruba
+18.0,215645.0,Australia
+81.0,117760.0,Austria
+50.0,84301.0,Azerbaijan
+58.0,21457.0,Bahamas
+105.0,592064.0,Bahrain
+23.0,8535.0,Bangladesh
+24.0,52285.0,Barbados
+66.0,152093.0,Belarus
+860.0,176773.0,Belgium
+13.0,14030.0,Belize
+3.0,8801.0,Benin
+145.0,581621.0,Bermuda
+NULL,86488.0,Bhutan
+362.0,19005.0,Bolivia
+157.0,51515.0,Bosnia and Herzegovina
+1.0,39620.0,Botswana
+528.0,64616.0,Brazil
+33.0,62461.0,British Virgin Islands
+7.0,112769.0,Brunei
+77.0,51683.0,Bulgaria
+3.0,NULL,Burkina Faso
+0.08,1675.0,Burundi
+13.0,6357.0,CAR
+66.0,132720.0,Cabo Verde
+NULL,4993.0,Cambodia
+15.0,5595.0,Cameroon
+240.0,131636.0,Canada
+NULL,16149.0,Caribbean Netherlands
+15.0,516171.0,Cayman Islands
+5.0,NULL,Chad
+276.0,396276.0,Channel Islands
+558.0,110437.0,Chile
+3.0,62814.0,China
+318.0,46606.0,Colombia
+8.0,NULL,Comoros
+14.0,NULL,Congo
+65.0,24769.0,Costa Rica
+41.0,35235.0,Croatia
+8.0,30589.0,Cuba
+6.0,6578.0,Curaça
+17.0,218392.0,Cyprus
+38.0,76565.0,Czechia
+3.0,NULL,DRC
+107.0,358091.0,Denmark
+NULL,NULL,Diamond Princess
+60.0,64116.0,Djibouti
+NULL,22858.0,Dominica
+139.0,30883.0,Dominican Republic
+351.0,16821.0,Ecuador
+51.0,1316.0,Egypt
+99.0,44418.0,El Salvador
+59.0,34935.0,Equatorial Guinea
+NULL,NULL,Eritrea
+47.0,104146.0,Estonia
+70.0,24427.0,Eswatini
+5.0,6018.0,Ethiopia
+NULL,1642742.0,Faeroe Islands
+NULL,645863.0,Falkland Islands
+1.0,7459.0,Fiji
+60.0,93458.0,Finland
+467.0,91892.0,France
+180.0,161444.0,French Guiana
+NULL,35257.0,French Polynesia
+24.0,46771.0,Gabon
+33.0,4445.0,Gambia
+4.0,79021.0,Georgia
+111.0,121656.0,Germany
+8.0,13841.0,Ghana
+NULL,841971.0,Gibraltar
+23.0,78386.0,Greece
+NULL,113518.0,Greenland
+NULL,55526.0,Grenada
+37.0,58943.0,Guadeloupe
+140.0,11871.0,Guatemala
+4.0,1288.0,Guinea
+17.0,760.0,Guinea-Bissau
+37.0,8261.0,Guyana
+17.0,1874.0,Haiti
+162.0,12890.0,Honduras
+10.0,103981.0,Hong Kong
+63.0,40394.0,Hungary
+29.0,561236.0,Iceland
+40.0,23636.0,India
+23.0,7192.0,Indonesia
+241.0,34940.0,Iran
+154.0,33929.0,Iraq
+359.0,148747.0,Ireland
+282.0,110734.0,Isle of Man
+86.0,237029.0,Israel
+586.0,128878.0,Italy
+4.0,4426.0,Ivory Coast
+5.0,16610.0,Jamaica
+9.0,9962.0,Japan
+1.0,70566.0,Jordan
+75.0,121832.0,Kazakhstan
+10.0,7391.0,Kenya
+119.0,134980.0,Kuwait
+229.0,40944.0,Kyrgyzstan
+NULL,4860.0,Laos
+18.0,123686.0,Latvia
+17.0,65050.0,Lebanon
+14.0,5611.0,Lesotho
+16.0,NULL,Liberia
+25.0,12855.0,Libya
+26.0,23595.0,Liechtenstein
+30.0,218825.0,Lithuania
+198.0,1126386.0,Luxembourg
+NULL,NULL,MS Zaandam
+NULL,6258.0,Macao
+6.0,1942.0,Madagascar
+9.0,2137.0,Malawi
+4.0,35535.0,Malaysia
+44.0,184996.0,Maldives
+6.0,1610.0,Mali
+20.0,376602.0,Malta
+43.0,32586.0,Martinique
+34.0,14762.0,Mauritania
+8.0,161379.0,Mauritius
+143.0,47502.0,Mayotte
+453.0,9383.0,Mexico
+228.0,45609.0,Moldova
+102.0,1322632.0,Monaco
+NULL,14103.0,Mongolia
+129.0,70404.0,Montenegro
+200.0,12220.0,Montserrat
+21.0,45187.0,Morocco
+0.6,2623.0,Mozambique
+0.1,2590.0,Myanmar
+16.0,17960.0,Namibia
+4.0,30083.0,Nepal
+361.0,76591.0,Netherlands
+NULL,41410.0,New Caledonia
+4.0,131446.0,New Zealand
+20.0,NULL,Nicaragua
+3.0,372.0,Niger
+5.0,1705.0,Nigeria
+266.0,63596.0,North Macedonia
+49.0,108447.0,Norway
+119.0,60353.0,Oman
+28.0,10673.0,Pakistan
+23.0,41991.0,Palestine
+426.0,66445.0,Panama
+0.4,1610.0,Papua New Guinea
+24.0,23250.0,Paraguay
+818.0,86336.0,Peru
+26.0,19981.0,Philippines
+51.0,63672.0,Poland
+175.0,184473.0,Portugal
+69.0,203815.0,Qatar
+164.0,82783.0,Romania
+110.0,229541.0,Russia
+0.8,27042.0,Rwanda
+6.0,39521.0,Réunio
+6.0,33819.0,S. Korea
+NULL,26009.0,Saint Kitts and Nevis
+NULL,26918.0,Saint Lucia
+129.0,63193.0,Saint Martin
+NULL,NULL,Saint Pierre Miquelon
+1237.0,191833.0,San Marino
+68.0,15621.0,Sao Tome and Principe
+102.0,129021.0,Saudi Arabia
+16.0,7997.0,Senegal
+79.0,96474.0,Serbia
+NULL,NULL,Seychelles
+9.0,NULL,Sierra Leone
+5.0,298108.0,Singapore
+396.0,46179.0,Sint Maarten
+6.0,55681.0,Slovakia
+62.0,70752.0,Slovenia
+6.0,NULL,Somalia
+212.0,58581.0,South Africa
+4.0,1074.0,South Sudan
+616.0,170147.0,Spain
+0.5,9102.0,Sri Lanka
+NULL,171946.0,St. Barth
+NULL,27327.0,St. Vincent Grenadines
+18.0,9.0,Sudan
+94.0,10026.0,Suriname
+574.0,101900.0,Sweden
+231.0,105073.0,Switzerland
+5.0,NULL,Syria
+0.3,3592.0,Taiwan
+7.0,NULL,Tajikistan
+0.4,NULL,Tanzania
+0.8,10730.0,Thailand
+NULL,3206.0,Timor-Leste
+3.0,6713.0,Togo
+9.0,12882.0,Trinidad and Tobago
+5.0,10071.0,Tunisia
+72.0,71770.0,Turkey
+52.0,50015.0,Turks and Caicos
+37.0,632496.0,UAE
+609.0,223407.0,UK
+536.0,222984.0,USA
+0.4,7332.0,Uganda
+50.0,31049.0,Ukraine
+12.0,44435.0,Uruguay
+8.0,41089.0,Uzbekistan
+NULL,NULL,Vatican City
+11.0,59056.0,Venezuela
+0.3,8385.0,Vietnam
+2.0,NULL,Western Sahara
+102.2,NULL,World
+18.0,4.0,Yemen
+15.0,5584.0,Zambia
+10.0,10056.0,Zimbabwe
