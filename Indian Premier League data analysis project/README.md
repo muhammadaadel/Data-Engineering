@@ -13,7 +13,7 @@ The goal of this project is to perform data analytics on IPL for Cricket data.
 <img src="Architecture.jpg">
 
 ## Technology Used
-- Databricks
+- Databricks (A jupyter-notebook-like environment made specifically for Data)
 - AWS S3
 - Pyspark
 - Spark SQL
@@ -25,3 +25,9 @@ The goal of this project is to perform data analytics on IPL for Cricket data.
 This dataset has the ball by ball data of all the Indian Premier League (IPL) matches till 2017 season including balls, teams, players and teams.
 #### Source
 Link: https://data.world/raghu543/ipl-data-till-2017/workspace/project-summary?agentid=raghu543&datasetid=ipl-data-till-2017
+
+## Steps
+1- First, we need to upload dataset to AWS S3 cloud storage by creating an S3 Bucket
+- you can create your own bucket or i have made my own publicly accessible, so you might use it if you wish.
+  Link: https://eu-north-1.console.aws.amazon.com/s3/buckets/ipl-dataset-till-2017?region=eu-north-1&bucketType=general&tab=objects
+
