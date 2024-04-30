@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The goal of this project is to perform data analytics on IPL for Cricket data.
+The goal of this project is to perform data analytics on IPL-(Indian Premier League) for Cricket data.
 
 ## Cricket-Explained (video)
 #### I highly recommend you to watch this video to understand about the game and most importantly to be able to create insights out of the dataset.
