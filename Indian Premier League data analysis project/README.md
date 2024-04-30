@@ -31,8 +31,10 @@ Link: https://data.world/raghu543/ipl-data-till-2017/workspace/project-summary?a
 - you can create your own bucket or i have made my own publicly accessible, so you might use it if you wish.
   Link: https://eu-north-1.console.aws.amazon.com/s3/buckets/ipl-dataset-till-2017?region=eu-north-1&bucketType=general&tab=objects
   <img src="My S3 Bucket.jpg">
+  
 2- Then, On Databricks, we'll create a cluster for data processing
   <img src="Cluster.jpg">
+  
 3- Create a new notebook, Connect it to the cluster, and run this command to start with spark
   ```
   Spark
