@@ -35,12 +35,64 @@ Link: https://data.world/raghu543/ipl-data-till-2017/workspace/project-summary?a
 2- Then, On Databricks, we'll create a cluster for data processing
   <img src="Cluster.jpg">
   
-3- Create a new notebook, Connect it to the cluster, and run this command to start with spark
+3- Create a new notebook, Connect it to the cluster, and run the command below to check if everything is working as intended, your screen should look like this:
   ```
   Spark
   ``` 
   <img src="connect_project_with_cluster.jpg">
 
+4- To start working with spark, you have to create a spark session object like below:
+```
+from pyspark.sql import SparkSession
+
+# create spark seesion object
+spark = SparkSession.builder.appName('IPL_Data_Analysis').getOrCreate()
+```
+
+5- Now, We're ready to import and read our data from the S3 Bucket we've created:
+#### Important note:
+- before reading the data using spark syntax, we have to import all the data types used in the dataset,then, define a clear schema for each table, and finally assigning the created schema as an argument when reading the data as follows:
+  
+  - I will take team.csv as an example since it has a simple schema that is easy to digest:
+  ```
+  # import types first
+  from pyspark.sql.types import StructType, StructField, IntegerType, DecimalType, StringType, BooleanType, DateType
+
+  # create team schema
+  team_schema = StructType([
+    StructField("team_sk", IntegerType(), True),
+    StructField("team_id", IntegerType(), True),
+    StructField("team_name", StringType(), True)
+  ])
+  ```
+  
+  - then, copy S3 URL for the data you want to read, for example:
+    <img src="S3 URL.jpg">
+    
+  - Finally, use this syntax to read the data:
+    ```
+    # Read data from AWS S3 Bucket and match it to the defined schema
+    team_df = spark.read.format('csv').option('header', 'true').load("S3_URL", schema=Schema_to_match)
+    ```
+    - So, for team.csv, it will be as follows:
+      ```
+      # Read team.csv from AWS S3 Bucket and match it to the above defined schema
+      team = spark.read.format('csv').option('header', 'true').load("s3://ipl-dataset-till-2017/Team.csv", schema=team_schema)
+      ```
+
+
+6- Finally, i recommend you to run the following not to waste time getting errors from different libraries and functions definition:
+```
+from pyspark.sql.functions import col, when, sum, avg, row_number, count  # Import functions for transformation 
+from pyspark.sql.window import Window   # to work with window function
+
+# For visualization
+import matplotlib.pyplot as plt
+import seaborn as sns  
+```
+
+## Finale
+#### Now, you're ready to go and use pyspark and spark SQL for processing and analytics and gain actionable insights using Matplotlib and Seaborn visualization capablities for this complex Cricket game.
 
 
 
