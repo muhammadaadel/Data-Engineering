@@ -4,8 +4,9 @@
 
 The goal of this project is to perform data analytics on IPL for Cricket data.
 
-## Cricket-Explained:
+## Cricket-Explained (video)
 #### I highly recommend you to watch this video to understand about the game and most importantly to be able to create insights out of the dataset:
+
 [![Data-Engineering](https://img.youtube.com/vi/NZGLHdcw2RM/0.jpg)](https://www.youtube.com/watch?v=NZGLHdcw2RM)
 
 ## Architecture 
