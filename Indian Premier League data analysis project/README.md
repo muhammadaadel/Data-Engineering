@@ -10,7 +10,7 @@ The goal of this project is to perform data analytics on IPL-(Indian Premier Lea
 [![Data-Engineering](https://img.youtube.com/vi/NZGLHdcw2RM/0.jpg)](https://www.youtube.com/watch?v=NZGLHdcw2RM)
 
 ## Architecture 
-<img src="Architecture.jpg">
+<img src="steps images/Architecture.jpg">
 
 ## Technology Used
 - Databricks (A jupyter-notebook-like environment made specifically for Data)
@@ -30,16 +30,16 @@ Link: https://data.world/raghu543/ipl-data-till-2017/workspace/project-summary?a
 1- First, we need to upload dataset to AWS S3 cloud storage by creating an S3 Bucket
 - you can create your own bucket or i have made my own publicly accessible, so you might use it if you wish.
   Link: https://eu-north-1.console.aws.amazon.com/s3/buckets/ipl-dataset-till-2017?region=eu-north-1&bucketType=general&tab=objects
-  <img src="My S3 Bucket.jpg">
+  <img src="steps images/My S3 Bucket.jpg">
   
 2- Then, On Databricks, we'll create a cluster for data processing
-  <img src="Cluster.jpg">
+  <img src="steps images/Cluster.jpg">
   
 3- Create a new notebook, Connect it to the cluster, and run the command below to check if everything is working as intended, your screen should look like this:
   ```
   Spark
   ``` 
-  <img src="connect_project_with_cluster.jpg">
+  <img src="steps images/connect_project_with_cluster.jpg">
 
 4- To start working with spark, you have to create a spark session object like below:
 ```
@@ -67,7 +67,7 @@ spark = SparkSession.builder.appName('IPL_Data_Analysis').getOrCreate()
   ```
   
   - then, copy S3 URL for the data you want to read, for example:
-    <img src="S3 URL.jpg">
+    <img src="steps images/S3 URL.jpg">
     
   - Finally, use this syntax to read the data:
     ```
