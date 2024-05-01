@@ -1,4 +1,4 @@
-# (IPL)- Indian Premier League for Cricket analysis till 2017
+# (IPL)- Indian Premier League for Cricket analysis
 
 ## Introduction
 
