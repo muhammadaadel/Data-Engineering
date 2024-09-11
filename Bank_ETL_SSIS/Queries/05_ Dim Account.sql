@@ -1,6 +1,0 @@
-SELECT [Customer ID]
-      ,[Account Number]
-      ,[Account Type]
-      ,[Balance]
-      ,[Status]
-  FROM [Union_Bank].[dbo].[Account]
