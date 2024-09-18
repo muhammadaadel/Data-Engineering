@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/5/2024 2:59:21 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-BFOGT63"
+  DTS:CreatorName="DESKTOP-BFOGT63\Dell"
+  DTS:DTSID="{4D501331-1AD2-4054-B12C-6A6F0CB7713E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{D8763BE0-C56E-4FFB-AAB8-19E17ADF1149}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT Fact_ATM Transaction"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BA3287D5-1754-415E-B658-255FD7FCCE3F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT Fact_ATM Transaction">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination Fact_ATM_Transactions"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ATM Transaction Fact]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Connections[OleDbConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].Columns[Transaction_Type_Id SK]"
+                      cachedDataType="i4"
+                      cachedName="Transaction_Type_Id SK"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[FK_TransactionTypeID SK]"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup Match Output].Columns[Transaction_Type_Id SK]" />
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].Columns[ATM ID SK]"
+                      cachedDataType="i4"
+                      cachedName="ATM ID SK"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[FK_ATM_ID SK]"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup Match Output].Columns[ATM ID SK]" />
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].Columns[CardNumber Sk]"
+                      cachedDataType="i4"
+                      cachedName="CardNumber Sk"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[FK_CardNumber SK]"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup Match Output].Columns[CardNumber Sk]" />
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].Columns[DateSK]"
+                      cachedDataType="i4"
+                      cachedName="DateSK"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[FK_TransactionDate SK]"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup Match Output].Columns[DateSK]" />
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].Columns[TransactionId]"
+                      cachedDataType="i8"
+                      cachedName="TransactionId"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[TransactionId BK]"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionId]" />
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[source_system_code]"
+                      lineageId="Package\DFT Fact_ATM Transaction\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]" />
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].Columns[Amount]"
+                      cachedDataType="cy"
+                      cachedName="Amount"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[Total_Amount]"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[Amount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[PK_ATM_Transaction SK]"
+                      dataType="i4"
+                      name="PK_ATM_Transaction SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[FK_TransactionTypeID SK]"
+                      dataType="i4"
+                      name="FK_TransactionTypeID SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[FK_ATM_ID SK]"
+                      dataType="i4"
+                      name="FK_ATM_ID SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[FK_CardNumber SK]"
+                      dataType="i4"
+                      name="FK_CardNumber SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[FK_TransactionDate SK]"
+                      dataType="i4"
+                      name="FK_TransactionDate SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[TransactionId BK]"
+                      dataType="i8"
+                      name="TransactionId BK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[source_system_code]"
+                      dataType="ui1"
+                      name="source_system_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[created_at]"
+                      dataType="dbTimeStamp"
+                      name="created_at" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input].ExternalColumns[Total_Amount]"
+                      dataType="r8"
+                      name="Total_Amount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Fact_ATM Transaction\DRV_SSC"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DRV_SSC"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Fact_ATM Transaction\DRV_SSC.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\DRV_SSC.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\DRV_SSC.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT Fact_ATM Transaction\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]"
+                      name="SSC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI1)1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\DRV_SSC.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\DRV_SSC.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LK- ATM ID BK into FK_ATM_ID SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [ATM ID SK]
+      ,[ATM ID BK]
+
+  FROM [Union Bank DWH].[dbo].[ATM Dim]
+  WHERE [is_current]=1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [ATM ID SK]
+      ,[ATM ID BK]
+
+  FROM [Union Bank DWH].[dbo].[ATM Dim]
+  WHERE [is_current]=1) [refTable]
+where [refTable].[ATM ID BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ATM ID SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ATM ID BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[ATM ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Connections[OleDbConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Inputs[Lookup Input].Columns[ATM ID]"
+                      cachedDataType="i4"
+                      cachedName="ATM ID"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[ATM ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">ATM ID BK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup Match Output].Columns[ATM ID SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup Match Output].Columns[ATM ID SK]"
+                      name="ATM ID SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">ATM ID SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LK- CardNumber BK into FK_CardNumber SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [CardNumber Sk]
+      ,[CardNumber Bk]
+
+  FROM [Union Bank DWH].[dbo].[Card Dim]
+  WHERE [is_current]=1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [CardNumber Sk]
+      ,[CardNumber Bk]
+
+  FROM [Union Bank DWH].[dbo].[Card Dim]
+  WHERE [is_current]=1) [refTable]
+where [refTable].[CardNumber Bk] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CardNumber Sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CardNumber Bk" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[CardNumber]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Connections[OleDbConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Inputs[Lookup Input].Columns[CardNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CardNumber"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[CardNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CardNumber Bk</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup Match Output].Columns[CardNumber Sk]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup Match Output].Columns[CardNumber Sk]"
+                      name="CardNumber Sk"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CardNumber Sk</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LK- Date BK into TransactionDate SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [DateSK]
+      ,[Date]
+
+  FROM [Union Bank DWH].[dbo].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [DateSK]
+      ,[Date]
+
+  FROM [Union Bank DWH].[dbo].[DimDate]) [refTable]
+where [refTable].[Date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateSK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionDate]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Connections[OleDbConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Inputs[Lookup Input].Columns[TransactionDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="TransactionDate"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionDate]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup Match Output].Columns[DateSK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup Match Output].Columns[DateSK]"
+                      name="DateSK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DateSK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LK- Transaction_Type_Id BK into FK_TransactionTypeID SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Transaction_Type_Id SK]
+      ,[Transaction_Type_Id BK]
+
+  FROM [Union Bank DWH].[dbo].[Transaction Type Dim]
+  WHERE [is_current]=1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [Transaction_Type_Id SK]
+      ,[Transaction_Type_Id BK]
+
+  FROM [Union Bank DWH].[dbo].[Transaction Type Dim]
+  WHERE [is_current]=1) [refTable]
+where [refTable].[Transaction_Type_Id BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Transaction_Type_Id SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Transaction_Type_Id BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionTypeId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Connections[OleDbConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Inputs[Lookup Input].Columns[TransactionTypeId]"
+                      cachedDataType="i4"
+                      cachedName="TransactionTypeId"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionTypeId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Transaction_Type_Id BK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup Match Output].Columns[Transaction_Type_Id SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup Match Output].Columns[Transaction_Type_Id SK]"
+                      name="Transaction_Type_Id SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Transaction_Type_Id SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Fact_ATM Transaction\Source Transactions"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source Transactions"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT tr.[TransactionId]
+      ,tr.[TransactionTypeId]
+      ,tr.[Amount]
+      ,tr.[TransactionDate]
+      ,tr.[Account Number]
+      ,tr.[ATM ID]
+	  ,c.[CardNumber]
+  FROM [Union_Bank].[dbo].[transactions_ATM_Account] tr
+  INNER JOIN 
+	   [Union_Bank].[dbo].[Account] acc
+	   ON
+	   tr.[Account Number] = acc.[Account Number]
+  INNER JOIN 
+	   [Union_Bank].[dbo].[Card] c
+	   ON
+	   acc.[Account Number] = c.Account_Number</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Fact_ATM Transaction\Source Transactions.Connections[OleDbConnection]"
+                  connectionManagerID="{B19038EA-56B7-4CA3-9352-DF2F4BA4868A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63 Src_Union_Bank]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[TransactionId]"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionId]"
+                      name="TransactionId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionTypeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[TransactionTypeId]"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionTypeId]"
+                      name="TransactionTypeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[Amount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[Amount]"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[Amount]"
+                      name="Amount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[TransactionDate]"
+                      length="10"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[TransactionDate]"
+                      name="TransactionDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[Account Number]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[Account Number]"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[Account Number]"
+                      name="Account Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[ATM ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[ATM ID]"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[ATM ID]"
+                      name="ATM ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[CardNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[CardNumber]"
+                      length="50"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].Columns[CardNumber]"
+                      name="CardNumber"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[TransactionId]"
+                      dataType="i8"
+                      name="TransactionId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[TransactionTypeId]"
+                      dataType="i4"
+                      name="TransactionTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[Amount]"
+                      dataType="cy"
+                      name="Amount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[TransactionDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="TransactionDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[Account Number]"
+                      dataType="i4"
+                      name="Account Number" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[ATM ID]"
+                      dataType="i4"
+                      name="ATM ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output].ExternalColumns[CardNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CardNumber" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[TransactionId]"
+                      dataType="i8"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[TransactionId]"
+                      name="TransactionId" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[TransactionTypeId]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[TransactionTypeId]"
+                      name="TransactionTypeId" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[Amount]"
+                      dataType="cy"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[Amount]"
+                      name="Amount" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[TransactionDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[TransactionDate]"
+                      name="TransactionDate" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[Account Number]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[Account Number]"
+                      name="Account Number" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[ATM ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[ATM ID]"
+                      name="ATM ID" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[CardNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[CardNumber]"
+                      name="CardNumber" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Fact_ATM Transaction.Paths[Derived Column Output]"
+              endId="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Fact_ATM Transaction\DRV_SSC.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Fact_ATM Transaction.Paths[Lookup Match Output]"
+              endId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT Fact_ATM Transaction.Paths[Lookup Match Output1]"
+              endId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT Fact_ATM Transaction.Paths[Lookup Match Output2]"
+              endId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT Fact_ATM Transaction.Paths[Lookup Match Output3]"
+              endId="Package\DFT Fact_ATM Transaction\DRV_SSC.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT Fact_ATM Transaction.Paths[OLE DB Source Output]"
+              endId="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Fact_ATM Transaction\Source Transactions.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\DFT Fact_ATM Transaction"
+          TopLeft="326.928572112809,145.441176347924" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT Fact_ATM Transaction">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="288.8,41.6"
+          Id="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK"
+          TopLeft="664.857138788822,236.996079584726" />
+        <NodeLayout
+          Size="244,41.6"
+          Id="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK"
+          TopLeft="691.857138386491,165.396079137691" />
+        <NodeLayout
+          Size="252,41.6"
+          Id="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK"
+          TopLeft="690.857138401392,321.196081357964" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\DFT Fact_ATM Transaction\Source Transactions"
+          TopLeft="372.857143139961,81.1960773644529" />
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions"
+          TopLeft="369.214280607902,404.549012703742" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\DFT Fact_ATM Transaction\DRV_SSC"
+          TopLeft="752.85713747752,405.596078586348" />
+        <NodeLayout
+          Size="359.2,41.6"
+          Id="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK"
+          TopLeft="639.857139161351,82.796078854569" />
+        <EdgeLayout
+          Id="Package\DFT Fact_ATM Transaction.Paths[OLE DB Source Output]"
+          TopLeft="546.457143139961,102.796078109511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93.3999960213901,0"
+              Start="0,0"
+              End="85.8999960213901,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="85.8999960213901,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Fact_ATM Transaction.Paths[Lookup Match Output3]"
+          TopLeft="815.457137939456,362.796081357964">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.799997228384"
+              Start="0,0"
+              End="0,35.299997228384">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.299997228384" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,11.845311114192,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Fact_ATM Transaction.Paths[Lookup Match Output2]"
+          TopLeft="813.057138595107,278.596079584726">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6000017732381"
+              Start="0,0"
+              End="0,35.1000017732381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1000017732381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,11.745313386619,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Fact_ATM Transaction.Paths[Lookup Match Output1]"
+          TopLeft="811.557138587657,206.996079137691">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.0000004470348"
+              Start="0,0"
+              End="0,22.5000004470348">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5000004470348" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,5.4453127235174,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Fact_ATM Transaction.Paths[Lookup Match Output]"
+          TopLeft="816.657138773921,124.396078854569">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.000000283122"
+              Start="0,0"
+              End="0,33.500000283122">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.500000283122" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.945312641561,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Fact_ATM Transaction.Paths[Derived Column Output]"
+          TopLeft="752.85713747752,425.872545645045">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-137.242856869618,0"
+              Start="0,0"
+              End="-129.742856869618,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-129.742856869618,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Fact_ATM Transaction\LK- CardNumber BK into FK_CardNumber SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Fact_ATM Transaction\LK- ATM ID BK into FK_ATM_ID SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Fact_ATM Transaction\LK- Date BK into TransactionDate SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Fact_ATM Transaction\Source Transactions">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Fact_ATM Transaction\Destination Fact_ATM_Transactions">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Fact_ATM Transaction\LK- Transaction_Type_Id BK into FK_TransactionTypeID SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

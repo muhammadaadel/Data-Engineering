@@ -1,0 +1,966 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/4/2024 5:56:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-BFOGT63"
+  DTS:CreatorName="DESKTOP-BFOGT63\Dell"
+  DTS:DTSID="{10D4AC43-C869-4C27-BC24-109414F5C680}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{0DB5B77C-1B30-43E4-9AEE-01D2A44961D3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT Dim_Branch"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{34355E3C-F70F-42DD-A406-236E531340BA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT Dim_Branch">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Dim_Branch\DRV_SSC"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DRV_SSC"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Branch\DRV_SSC.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Dim_Branch\DRV_SSC.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]"
+                      name="SSC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI1)1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Dim_Branch\DRV_SSC.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination Dim_Branch"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Branch Dim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Connections[OleDbConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].Columns[BranchName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BranchName"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[BranchName]"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchName]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].Columns[Branch_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Branch_Location"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[Branch Location]"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[Branch_Location]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].Columns[BranchId]"
+                      cachedDataType="i4"
+                      cachedName="BranchId"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[BranchId BK]"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchId]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[source_system_code]"
+                      lineageId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[BranchId SK]"
+                      dataType="i4"
+                      name="BranchId SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[BranchName]"
+                      dataType="wstr"
+                      length="255"
+                      name="BranchName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[Branch Location]"
+                      dataType="wstr"
+                      length="255"
+                      name="Branch Location" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[BranchId BK]"
+                      dataType="i4"
+                      name="BranchId BK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[source_system_code]"
+                      dataType="ui1"
+                      name="source_system_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[start_date]"
+                      dataType="dbTimeStamp"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[end_date]"
+                      dataType="dbTimeStamp"
+                      name="end_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input].ExternalColumns[is_current]"
+                      dataType="i4"
+                      name="is_current" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Branch\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Branch Dim] SET [BranchName] = ? WHERE [BranchId BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim_Branch\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].Columns[BranchId]"
+                      cachedDataType="i4"
+                      cachedName="BranchId"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchId]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].Columns[BranchName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BranchName"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Branch\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Branch\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Branch\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [BranchId]
+      ,[BranchName]
+      ,[Branch_Location]
+  FROM [Union_Bank].[dbo].[Branch]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim_Branch\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{B19038EA-56B7-4CA3-9352-DF2F4BA4868A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63 Src_Union_Bank]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BranchId]"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchId]"
+                      name="BranchId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BranchName]"
+                      length="255"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchName]"
+                      name="BranchName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[Branch_Location]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Branch_Location]"
+                      length="255"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[Branch_Location]"
+                      name="Branch_Location"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BranchId]"
+                      dataType="i4"
+                      name="BranchId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BranchName]"
+                      dataType="wstr"
+                      length="255"
+                      name="BranchName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Branch_Location]"
+                      dataType="wstr"
+                      length="255"
+                      name="Branch_Location" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BranchId]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BranchId]"
+                      name="BranchId" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BranchName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BranchName]"
+                      name="BranchName" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Branch_Location]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Branch_Location]"
+                      name="Branch_Location" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Branch\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Branch Location], [BranchId BK], [BranchName], [source_system_code] FROM [dbo].[Branch Dim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Branch_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Branch_Location"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Branch Location]"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[Branch_Location]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[BranchId]"
+                      cachedDataType="i4"
+                      cachedName="BranchId"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[BranchId BK]"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[BranchName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BranchName"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[BranchName]"
+                      lineageId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      externalMetadataColumnId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[source_system_code]"
+                      lineageId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Branch Location]"
+                      dataType="wstr"
+                      length="255"
+                      name="Branch Location" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[BranchId BK]"
+                      dataType="i4"
+                      name="BranchId BK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[BranchName]"
+                      dataType="wstr"
+                      length="255"
+                      name="BranchName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[source_system_code]"
+                      dataType="ui1"
+                      name="source_system_code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Branch\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Dim_Branch.Paths[Changing Attribute Updates Output]"
+              endId="Package\DFT Dim_Branch\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\DFT Dim_Branch\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\DFT Dim_Branch.Paths[Derived Column Output]"
+              endId="Package\DFT Dim_Branch\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Dim_Branch\DRV_SSC.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Dim_Branch.Paths[New Output]"
+              endId="Package\DFT Dim_Branch\Insert Destination Dim_Branch.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\DFT Dim_Branch\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\DFT Dim_Branch.Paths[OLE DB Source Output]"
+              endId="Package\DFT Dim_Branch\DRV_SSC.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Dim_Branch\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\DFT Dim_Branch"
+          TopLeft="229.071429047353,241.029411558255" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT Dim_Branch">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\DFT Dim_Branch\Slowly Changing Dimension"
+          TopLeft="469.735714845648,270.832352886715" />
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\DFT Dim_Branch\Insert Destination Dim_Branch"
+          TopLeft="144.071428866411,276.079411794702" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DFT Dim_Branch\OLE DB Command"
+          TopLeft="488.478571982424,365.35882348115" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\DFT Dim_Branch\OLE DB Source"
+          TopLeft="213.221428523151,164.176470449149" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\DFT Dim_Branch\DRV_SSC"
+          TopLeft="512.535714845648,169.232352886715" />
+        <EdgeLayout
+          Id="Package\DFT Dim_Branch.Paths[Derived Column Output]"
+          TopLeft="573.735714845648,210.832352886715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Branch.Paths[Changing Attribute Updates Output]"
+          TopLeft="572.307143414036,312.432352886715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.9264705944351"
+              Start="0,0"
+              End="0,45.4264705944351">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.4264705944351" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.53390625,16.8816923284676,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Branch.Paths[OLE DB Source Output]"
+          TopLeft="362.821428523151,187.504411667932">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="149.714286322496,0"
+              Start="0,0"
+              End="142.214286322496,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="142.214286322496,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Branch.Paths[New Output]"
+          TopLeft="469.735714845648,294.255882340708">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-103.264285979237,0"
+              Start="0,0"
+              End="-95.7642859792369,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-95.7642859792369,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-74.9735297083684,5,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim_Branch\Insert Destination Dim_Branch">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim_Branch\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Branch Dim]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Branch_Location]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Branch Location&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchId]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;BranchId BK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[BranchName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;BranchName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DRV_SSC.Outputs[Derived Column Output].Columns[SSC]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;source_system_code&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim_Branch\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

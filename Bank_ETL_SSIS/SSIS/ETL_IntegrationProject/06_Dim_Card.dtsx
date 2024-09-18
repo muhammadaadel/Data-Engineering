@@ -1,0 +1,1969 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/4/2024 11:46:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-BFOGT63"
+  DTS:CreatorName="DESKTOP-BFOGT63\Dell"
+  DTS:DTSID="{9888BC30-9EFC-4EF7-853C-F8FE9811F233}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{873D6998-9ACB-478D-98BB-0D7FAF1EE9B3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT Dim_Card"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{522CCB52-2C06-4300-A417-A77E6201FB63}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT Dim_Card">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Dim_Card\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Card\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Card\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Dim_Card\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Derived Column.Outputs[Derived Column Output].Columns[end_date]"
+                      dataType="dbTimeStamp"
+                      description="end_date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT Dim_Card\Derived Column.Outputs[Derived Column Output].Columns[end_date]"
+                      name="end_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Dim_Card\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Card\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Card\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Card\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Dim_Card\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Derived Column 1.Outputs[Derived Column Output].Columns[start_date]"
+                      dataType="dbTimeStamp"
+                      description="start_date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT Dim_Card\Derived Column 1.Outputs[Derived Column Output].Columns[start_date]"
+                      name="start_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Dim_Card\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Card\DRV_SSC"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DRV_SSC"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Card\DRV_SSC.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Dim_Card\DRV_SSC.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]"
+                      name="SSC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI1)1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Dim_Card\DRV_SSC.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Card\Insert Destination Card Dim"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination Card Dim"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Card Dim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim_Card\Insert Destination Card Dim.Connections[OleDbConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].Columns[Card_Type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Card_Type"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[Card_Type]"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Card_Type]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].Columns[Card_Status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Card_Status"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[Card_Status]"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Card_Status]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].Columns[Expiry_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Expiry_Date"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[Expiry_Date]"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Expiry_Date]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].Columns[CSV]"
+                      cachedDataType="i4"
+                      cachedName="CSV"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[CSV]"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[CSV]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].Columns[CardNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CardNumber"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[CardNumber Bk]"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[CardNumber]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].Columns[Account Number SK]"
+                      cachedDataType="i4"
+                      cachedName="Account Number SK"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[FK_Account_Number SK]"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Account Number SK]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[source_system_code]"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[SSC]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].Columns[start_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="start_date"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[start_date]"
+                      lineageId="Package\DFT Dim_Card\Derived Column 1.Outputs[Derived Column Output].Columns[start_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[CardNumber Sk]"
+                      dataType="i4"
+                      name="CardNumber Sk" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[Card_Type]"
+                      dataType="wstr"
+                      length="50"
+                      name="Card_Type" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[Card_Status]"
+                      dataType="wstr"
+                      length="50"
+                      name="Card_Status" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[Expiry_Date]"
+                      dataType="wstr"
+                      length="10"
+                      name="Expiry_Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[CSV]"
+                      dataType="i4"
+                      name="CSV" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[CardNumber Bk]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CardNumber Bk" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[FK_Account_Number SK]"
+                      dataType="i4"
+                      name="FK_Account_Number SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[source_system_code]"
+                      dataType="ui1"
+                      name="source_system_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[start_date]"
+                      dataType="dbTimeStamp"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[end_date]"
+                      dataType="dbTimeStamp"
+                      name="end_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input].ExternalColumns[is_current]"
+                      dataType="i4"
+                      name="is_current" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Card\Insert Destination Card Dim.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Insert Destination Card Dim.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Insert Destination Card Dim.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Insert Destination Card Dim.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LK- Account Number BK into Account Number SK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Account Number SK]
+      ,[Account Number BK]
+
+  FROM [Union Bank DWH].[dbo].[Account Dim]
+  WHERE [is_current]=1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [Account Number SK]
+      ,[Account Number BK]
+
+  FROM [Union Bank DWH].[dbo].[Account Dim]
+  WHERE [is_current]=1) [refTable]
+where [refTable].[Account Number BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Account Number SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Account Number BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Account_Number]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Connections[OleDbConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Inputs[Lookup Input].Columns[Account_Number]"
+                      cachedDataType="i4"
+                      cachedName="Account_Number"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Account_Number]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Account Number BK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Match Output].Columns[Account Number SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Match Output].Columns[Account Number SK]"
+                      name="Account Number SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Account Number SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Card\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Card Dim] SET [end_date] = ?
+,[is_current]=0
+ WHERE [CardNumber Bk] = ? AND [end_date] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim_Card\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Card\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\OLE DB Command.Inputs[OLE DB Command Input].Columns[CardNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CardNumber"
+                      externalMetadataColumnId="Package\DFT Dim_Card\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CardNumber]" />
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\OLE DB Command.Inputs[OLE DB Command Input].Columns[end_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="end_date"
+                      externalMetadataColumnId="Package\DFT Dim_Card\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT Dim_Card\Derived Column.Outputs[Derived Column Output].Columns[end_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Card\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT Dim_Card\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT Dim_Card\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Card\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Card_Status], [Card_Type], [CardNumber Bk], [CSV], [Expiry_Date], [FK_Account_Number SK], [source_system_code],[start_date],[end_date] FROM [dbo].[Card Dim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere">[start_date] IS NOT NULL AND [end_date] IS NULL</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim_Card\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63.Union Bank DWH]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Card_Status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Card_Status"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Card_Status]"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Card_Status]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Card_Type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Card_Type"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Card_Type]"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Card_Type]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CardNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CardNumber"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CardNumber Bk]"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CardNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CSV]"
+                      cachedDataType="i4"
+                      cachedName="CSV"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CSV]"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CSV]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Expiry_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Expiry_Date"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Expiry_Date]"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Expiry_Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Account Number SK]"
+                      cachedDataType="i4"
+                      cachedName="Account Number SK"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FK_Account_Number SK]"
+                      lineageId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Match Output].Columns[Account Number SK]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[source_system_code]"
+                      lineageId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Card_Status]"
+                      dataType="wstr"
+                      length="50"
+                      name="Card_Status" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Card_Type]"
+                      dataType="wstr"
+                      length="50"
+                      name="Card_Type" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CardNumber Bk]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CardNumber Bk" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CSV]"
+                      dataType="i4"
+                      name="CSV" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Expiry_Date]"
+                      dataType="wstr"
+                      length="10"
+                      name="Expiry_Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FK_Account_Number SK]"
+                      dataType="i4"
+                      name="FK_Account_Number SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[source_system_code]"
+                      dataType="ui1"
+                      name="source_system_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[start_date]"
+                      dataType="dbTimeStamp"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[end_date]"
+                      dataType="dbTimeStamp"
+                      name="end_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Card\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Card\Source Card"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source Card"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [CardNumber]
+      ,[Card_Type]
+      ,[Card_Status]
+      ,[Expiry_Date]
+      ,[CSV]
+      ,[Account_Number]
+  FROM [Union_Bank].[dbo].[Card]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim_Card\Source Card.Connections[OleDbConnection]"
+                  connectionManagerID="{B19038EA-56B7-4CA3-9352-DF2F4BA4868A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-BFOGT63 Src_Union_Bank]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CardNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[CardNumber]"
+                      length="50"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CardNumber]"
+                      name="CardNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Card_Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[Card_Type]"
+                      length="50"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Card_Type]"
+                      name="Card_Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Card_Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[Card_Status]"
+                      length="50"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Card_Status]"
+                      name="Card_Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Expiry_Date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[Expiry_Date]"
+                      length="10"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Expiry_Date]"
+                      name="Expiry_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CSV]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[CSV]"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CSV]"
+                      name="CSV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Account_Number]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[Account_Number]"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Account_Number]"
+                      name="Account_Number"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[CardNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CardNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[Card_Type]"
+                      dataType="wstr"
+                      length="50"
+                      name="Card_Type" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[Card_Status]"
+                      dataType="wstr"
+                      length="50"
+                      name="Card_Status" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[Expiry_Date]"
+                      dataType="wstr"
+                      length="10"
+                      name="Expiry_Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[CSV]"
+                      dataType="i4"
+                      name="CSV" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].ExternalColumns[Account_Number]"
+                      dataType="i4"
+                      name="Account_Number" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[CardNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[CardNumber]"
+                      name="CardNumber" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[Card_Type]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[Card_Type]"
+                      name="Card_Type" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[Card_Status]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[Card_Status]"
+                      name="Card_Status" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[Expiry_Date]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[Expiry_Date]"
+                      name="Expiry_Date" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[CSV]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[CSV]"
+                      name="CSV" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[Account_Number]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[Account_Number]"
+                      name="Account_Number" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim_Card\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 1].Columns[CardNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CardNumber"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CardNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[CardNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 1].Columns[Card_Type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Card_Type"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Card_Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Card_Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 1].Columns[Card_Status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Card_Status"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Card_Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Card_Status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 1].Columns[Expiry_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Expiry_Date"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Expiry_Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Expiry_Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 1].Columns[CSV]"
+                      cachedDataType="i4"
+                      cachedName="CSV"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CSV]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[CSV]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 1].Columns[Account_Number]"
+                      cachedDataType="i4"
+                      cachedName="Account_Number"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Account_Number]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Account_Number]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 1].Columns[Account Number SK]"
+                      cachedDataType="i4"
+                      cachedName="Account Number SK"
+                      lineageId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Match Output].Columns[Account Number SK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Account Number SK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 1].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      lineageId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[SSC]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 2].Columns[CardNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CardNumber"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CardNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[CardNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 2].Columns[Card_Type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Card_Type"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Card_Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Card_Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 2].Columns[Card_Status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Card_Status"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Card_Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Card_Status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 2].Columns[Expiry_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Expiry_Date"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Expiry_Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Expiry_Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 2].Columns[CSV]"
+                      cachedDataType="i4"
+                      cachedName="CSV"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[CSV]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[CSV]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 2].Columns[Account_Number]"
+                      cachedDataType="i4"
+                      cachedName="Account_Number"
+                      lineageId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output].Columns[Account_Number]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Account_Number]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 2].Columns[Account Number SK]"
+                      cachedDataType="i4"
+                      cachedName="Account Number SK"
+                      lineageId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Match Output].Columns[Account Number SK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Account Number SK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 2].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      lineageId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Output].Columns[SSC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[SSC]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[CardNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[CardNumber]"
+                      name="CardNumber" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Card_Type]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Card_Type]"
+                      name="Card_Type" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Card_Status]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Card_Status]"
+                      name="Card_Status" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Expiry_Date]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Expiry_Date]"
+                      name="Expiry_Date" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[CSV]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[CSV]"
+                      name="CSV" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Account_Number]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Account_Number]"
+                      name="Account_Number" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Account Number SK]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[Account Number SK]"
+                      name="Account Number SK" />
+                    <outputColumn
+                      refId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[SSC]"
+                      dataType="ui1"
+                      lineageId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1].Columns[SSC]"
+                      name="SSC" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Dim_Card.Paths[Derived Column Output]"
+              endId="Package\DFT Dim_Card\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Dim_Card\DRV_SSC.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Dim_Card.Paths[Derived Column Output1]"
+              endId="Package\DFT Dim_Card\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Dim_Card\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Dim_Card.Paths[Derived Column Output2]"
+              endId="Package\DFT Dim_Card\Insert Destination Card Dim.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Dim_Card\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Dim_Card.Paths[Historical Attribute Inserts Output]"
+              endId="Package\DFT Dim_Card\Derived Column.Inputs[Derived Column Input]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\DFT Dim_Card\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
+              refId="Package\DFT Dim_Card.Paths[Lookup Match Output]"
+              endId="Package\DFT Dim_Card\DRV_SSC.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT Dim_Card.Paths[New Output]"
+              endId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 1]"
+              name="New Output"
+              startId="Package\DFT Dim_Card\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\DFT Dim_Card.Paths[OLE DB Command Output]"
+              endId="Package\DFT Dim_Card\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\DFT Dim_Card\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\DFT Dim_Card.Paths[OLE DB Source Output]"
+              endId="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Dim_Card\Source Card.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT Dim_Card.Paths[Union All Output 1]"
+              endId="Package\DFT Dim_Card\Derived Column 1.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\DFT Dim_Card\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\DFT Dim_Card"
+          TopLeft="218.35714331026,189.794117485518" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT Dim_Card">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\DFT Dim_Card\Union All"
+          TopLeft="895.185715827528,503.452941274333" />
+        <NodeLayout
+          Size="309.6,41.6"
+          Id="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK"
+          TopLeft="791.814287237854,62.7470588624064" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\DFT Dim_Card\Insert Destination Card Dim"
+          TopLeft="371.332653533021,572.064706098186" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DFT Dim_Card\Derived Column 1"
+          TopLeft="866.842858669466,574.464706007027" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\DFT Dim_Card\Source Card"
+          TopLeft="435.442857722178,67.4411764162943" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DFT Dim_Card\OLE DB Command"
+          TopLeft="722.642858669466,423.264705961448" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\DFT Dim_Card\Slowly Changing Dimension"
+          TopLeft="844.042858669466,220.064705961448" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\DFT Dim_Card\DRV_SSC"
+          TopLeft="885.414287237853,149.052941228753" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\DFT Dim_Card\Derived Column"
+          TopLeft="734.642858669466,321.664705961448" />
+        <EdgeLayout
+          Id="Package\DFT Dim_Card.Paths[Union All Output 1]"
+          TopLeft="951.614287248497,545.052941274333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.4117647326941"
+              Start="0,0"
+              End="0,21.9117647326941">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9117647326941" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Card.Paths[OLE DB Source Output]"
+          TopLeft="570.642857722178,85.8941176393504">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="221.171429515676,0"
+              Start="0,0"
+              End="213.671429515676,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="213.671429515676,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Card.Paths[OLE DB Command Output]"
+          TopLeft="805.042858669466,464.864705961448">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131.476190491396,38.5882353128849"
+              Start="0,0"
+              End="131.476190491396,31.0882353128849">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.8482972247344" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.8482972247344"
+                    Point2="0,22.8482972247344"
+                    Point3="4,22.8482972247344" />
+                  <mssgle:LineSegment
+                    End="127.476190491396,22.8482972247344" />
+                  <mssgle:CubicBezierSegment
+                    Point1="127.476190491396,22.8482972247344"
+                    Point2="131.476190491396,22.8482972247344"
+                    Point3="131.476190491396,26.8482972247344" />
+                  <mssgle:LineSegment
+                    End="131.476190491396,31.0882353128849" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Card.Paths[New Output]"
+          TopLeft="977.614287248497,261.664705961448">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,241.788235312885"
+              Start="0,0"
+              End="0,234.288235312885">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,234.288235312885" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,111.427320781442,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Card.Paths[Lookup Match Output]"
+          TopLeft="946.614287237853,104.347058862406">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.7058823663471"
+              Start="0,0"
+              End="0,37.2058823663471">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.2058823663471" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,12.7982536831735,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Card.Paths[Historical Attribute Inserts Output]"
+          TopLeft="914.709525336133,261.664705961448">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-103.666666666667,59.9999999999999"
+              Start="0,0"
+              End="-103.666666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603053"
+                    Point2="0,24.2748091603053"
+                    Point3="-4,24.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-99.6666666666671,24.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-99.6666666666671,24.2748091603053"
+                    Point2="-103.666666666667,24.2748091603053"
+                    Point3="-103.666666666667,28.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-103.666666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-126.889720052084,29.2748091603053,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Card.Paths[Derived Column Output2]"
+          TopLeft="866.842858669466,594.064706052607">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-285.910205136444,0"
+              Start="0,0"
+              End="-278.410205136444,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-278.410205136444,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Card.Paths[Derived Column Output1]"
+          TopLeft="808.042858669466,363.264705961448">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim_Card.Paths[Derived Column Output]"
+          TopLeft="947.32857295366,190.652941228753">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.4117647326942"
+              Start="0,0"
+              End="0,21.9117647326942">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9117647326942" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim_Card\LK- Account Number BK into Account Number SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim_Card\Source Card">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim_Card\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{D64D57F7-ADBD-47CC-A8BB-0DB17120B40E}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Card Dim]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Source Card.Outputs[OLE DB Source Output].Columns[Card_Status]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Card_Status&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Source Card.Outputs[OLE DB Source Output].Columns[Card_Type]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Card_Type&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Source Card.Outputs[OLE DB Source Output].Columns[CardNumber]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CardNumber Bk&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Source Card.Outputs[OLE DB Source Output].Columns[CSV]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CSV&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Source Card.Outputs[OLE DB Source Output].Columns[Expiry_Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Expiry_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LK- Account Number BK into Account Number SK.Outputs[Lookup Match Output].Columns[Account Number SK]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FK_Account_Number SK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DRV_SSC.Outputs[Derived Column Output].Columns[SSC]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;source_system_code&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;start_date&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;end_date&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

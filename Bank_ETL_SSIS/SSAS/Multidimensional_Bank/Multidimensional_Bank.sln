@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35209.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "Multidimensional_Bank", "Multidimensional_Bank\Multidimensional_Bank.dwproj", "{EC7FE080-AB41-46C7-9BCB-28AFAF7C7D4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC7FE080-AB41-46C7-9BCB-28AFAF7C7D4F}.Development|Default.ActiveCfg = Development
+		{EC7FE080-AB41-46C7-9BCB-28AFAF7C7D4F}.Development|Default.Build.0 = Development
+		{EC7FE080-AB41-46C7-9BCB-28AFAF7C7D4F}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D6DB7AB-0D7E-4EC7-B56C-F921013DF787}
+	EndGlobalSection
+EndGlobal
